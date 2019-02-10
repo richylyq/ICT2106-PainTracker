@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ExploreCalifornia.Models.Entry>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    #PDwrapper {
+        padding: 25px;
+        margin:70px;
+        width:75%;
+        height:auto;
+        
+    }
+
+    .flaticon-upload, .flaticon-upload:hover {
+        
+        text-decoration: none;
+        font-size: 50px;
+        margin-left: 70%;
+    }
+
+    .table {
+        
+        background-color:aquamarine;
+    }
+
+</style>
+
+<div id="PDwrapper">
+    <h1>Pain Diary</h1>
+
+    <p>
+        <a asp-action="Create" class="flaticon-upload"></a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Creation Date
+                </th>
+                
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.creationDate)
+                    </td>
+                    
+                    <td>
+
+                        @Html.ActionLink("View", "View", new { id = item.entryID }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.entryID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.entryID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

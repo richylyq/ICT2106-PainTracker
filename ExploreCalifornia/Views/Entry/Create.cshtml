@@ -1,0 +1,79 @@
+﻿@model ExploreCalifornia.Models.Entry
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    #PDwrapper {
+        padding: 25px;
+        margin:70px;
+        width:75%;
+        height:auto;
+    }
+</style>
+
+
+<div id="PDwrapper">
+    <h1>Create New Pain Diary Entry</h1>
+
+    <h4>Entry</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="entryID" class="control-label"></label>
+                    <input asp-for="entryID" class="form-control" />
+                    <span asp-validation-for="entryID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="creationDate" class="control-label"></label>
+                    <input asp-for="creationDate" class="form-control" />
+                    <span asp-validation-for="creationDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="title" class="control-label"></label>
+                    <input asp-for="title" class="form-control" />
+                    <span asp-validation-for="title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="description" class="control-label"></label>
+                    <input asp-for="description" class="form-control" />
+                    <span asp-validation-for="description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="logDateTime" class="control-label"></label>
+                    <input asp-for="logDateTime" class="form-control" />
+                    <span asp-validation-for="logDateTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="painArea" class="control-label"></label>
+                    <input asp-for="painArea" class="form-control" />
+                    <span asp-validation-for="painArea" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="logNotes" class="control-label"></label>
+                    <input asp-for="logNotes" class="form-control" />
+                    <span asp-validation-for="logNotes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="logType" class="control-label"></label>
+                    <input asp-for="logType" class="form-control" />
+                    <span asp-validation-for="logType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
