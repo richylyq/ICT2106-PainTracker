@@ -5,62 +5,40 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ExploreCalifornia.Models;
+using ExploreCalifornia.Data;
 
 namespace ExploreCalifornia.Controllers
 {
     public class EntryController : Controller
     {
 
-        static List<Entry> model = new List<Entry>();
-        static bool uploaded = false;
+        internal DataGateway<Entry> dataGateway;
 
+        public EntryController(ExploreCaliforniaContext context)
+        {
+            dataGateway = new EntryGateway(context);
+        }
         // GET: Entry
         public ActionResult Index()
         {
-            if (!uploaded)
-            {
-                var entry1 = new Entry();
-                entry1.entryID = 1;
-                entry1.title = "PAIN!";
-                entry1.creationDate = new DateTime(2020, 12, 10);
-
-                var entry2 = new Entry();
-                entry2.entryID = 2;
-                entry2.title = "NOT PAIN!";
-                entry2.creationDate = new DateTime(2020, 12, 11);
-
-                var entry3 = new Entry();
-                entry3.entryID = 3;
-                entry3.title = "VERY PAIN!";
-                entry3.creationDate = new DateTime(2020, 12, 15);
-
-                var entry4 = new Entry();
-                entry4.entryID = 4;
-                entry4.title = "NUMB!";
-                entry4.creationDate = new DateTime(2020, 12, 30);
-
-                model.Add(entry1);
-                model.Add(entry2);
-                model.Add(entry3);
-                model.Add(entry4);
-                uploaded = true;
-            }
-            return View(model);
+            return View(dataGateway.SelectAll());
         }
 
         // GET: Entry/Details/5
         public ActionResult Details(int id)
         {
-            Entry selected = new Entry();
-            foreach (Entry entry in model)
+
+            if (id == null)
             {
-                if (entry.entryID == id)
-                {
-                    selected = entry;
-                    break;
-                }
+                return NotFound();
             }
-            return View(selected);
+
+            Entry entry = dataGateway.SelectById(id);
+            if (entry == null)
+            {
+                return NotFound();
+            }
+            return View(entry);
         }
 
         // GET: Entry/Create
@@ -77,7 +55,7 @@ namespace ExploreCalifornia.Controllers
             try
             {
                 // TODO: Add insert logic here
-                model.Add(entry);
+                dataGateway.Insert(entry);
                 return RedirectToAction(nameof(Details), new { id = entry.entryID });
             }
             catch
@@ -112,16 +90,7 @@ namespace ExploreCalifornia.Controllers
         // GET: Entry/Delete/5
         public ActionResult Delete(int id)
         {
-            Entry selected = new Entry();
-            foreach (Entry entry in model)
-            {
-                if (entry.entryID == id)
-                {
-                    selected = entry;
-                    break;
-                }
-            }
-            return View(selected);
+            return View();
         }
 
         // POST: Entry/Delete/5
@@ -144,14 +113,7 @@ namespace ExploreCalifornia.Controllers
         public ActionResult View(int id)
         {
             Entry selected = new Entry();
-            foreach (Entry entry in model)
-            {
-                if (entry.entryID == id)
-                {
-                    selected = entry;
-                    break;
-                }
-            }
+            selected = dataGateway.SelectById(id);
             return View(selected);
         }
 

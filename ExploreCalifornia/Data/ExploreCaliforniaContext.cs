@@ -26,10 +26,8 @@ namespace ExploreCalifornia.Models
         {
         }
 
-        public ExploreCaliforniaContext(DbContextOptions options) : base(options)
-        {
-        }
 
-        public DbSet<ExploreCalifornia.Models.Tour> Tour { get; set; }
+        public DbSet<Tour> Tour { get; set; }
+        public new DbSet<Entry> Entry { get; set; }
     }
 }

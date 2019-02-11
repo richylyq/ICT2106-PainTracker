@@ -116,7 +116,6 @@ C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\Ex
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\bin\Debug\netcoreapp2.2\ExploreCalifornia.pdb
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\bin\Debug\netcoreapp2.2\ExploreCalifornia.Views.dll
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\bin\Debug\netcoreapp2.2\ExploreCalifornia.Views.pdb
-C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.csprojAssemblyReference.cache
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.csproj.CoreCompileInputs.cache
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.RazorAssemblyInfo.cache
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.RazorAssemblyInfo.cs
@@ -153,3 +152,4 @@ C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\Ex
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Entry\Create.g.cshtml.cs
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Entry\View.g.cshtml.cs
 C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Entry\Details.g.cshtml.cs
+C:\Users\yuqua\Desktop\SIT\Y2\Trimester2\ICT2106\PROJECTS\ICT2106-PainTracker\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.csprojAssemblyReference.cache
