@@ -4,45 +4,59 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<style>
+    #PDwrapper {
+        padding: 25px;
+        margin: 70px;
+        width: 75%;
+        height: auto;
+    }
+</style>
 
-<div>
-    <h4>Entry</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.entryID)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.entryID)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.diaryID)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.diaryID)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.entryTitle)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.entryTitle)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.entryDescription)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.entryDescription)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.painTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.painTime)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.entryID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div id="PDwrapper">
+
+    <h1>Details</h1>
+
+    <div>
+        <h4>Entry</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.entryID)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.entryID)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.diaryID)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.diaryID)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.entryTitle)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.entryTitle)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.entryDescription)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.entryDescription)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.painTime)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.painTime)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.entryID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+
 </div>

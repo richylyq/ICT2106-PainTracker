@@ -20,7 +20,7 @@ namespace ExploreCalifornia.Models
 
         //public List<PainIntensity> painIntensity { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Time)]
         public DateTime painTime { get; set; }
 
         
