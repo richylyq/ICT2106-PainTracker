@@ -9,6 +9,8 @@ namespace ExploreCalifornia.Models
     {
         public int diaryID { get; set; }
 
+        public Boolean diaryPermission { get; set; }
+
         public List<Entry> entries { get; set; }
     }
 }

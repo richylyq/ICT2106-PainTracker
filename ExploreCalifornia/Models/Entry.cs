@@ -10,22 +10,31 @@ namespace ExploreCalifornia.Models
     {
         public int entryID { get; set; }
 
-        public List<Log> logs { get; set; }
+        public int diaryID { get; set; }
+
+        public String entryTitle { get; set; }
+
+        public String entryDescription { get; set; }
+
+        //public List<PainArea> painArea { get; set; } not sure bout this list part
+
+        //public List<PainIntensity> painIntensity { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime creationDate { get; set; }
+        public DateTime painTime { get; set; }
 
-        public String title { get; set; }
+        
+        
+        //[DataType(DataType.Date)]
+        //public DateTime creationDate { get; set; }
 
-        public String description { get; set; }
+        //[DataType(DataType.Date)]
+        //public DateTime logDateTime { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime logDateTime { get; set; }
+        //public List<Log> logs { get; set; }
 
-        public String painArea { get; set; }
+        //public String logNotes { get; set; }
 
-        public String logNotes { get; set; }
-
-        public String logType { get; set; }
+        //public String logType { get; set; }
     }
 }

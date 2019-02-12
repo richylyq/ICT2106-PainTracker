@@ -18,7 +18,7 @@
 <div id="PDwrapper">
     <div class="row">
         <div class="col-md-10">
-            <h1> @Html.DisplayFor(model => model.title) Pain Diary Details<small class="text-muted">&emsp;Date created:   @Html.DisplayFor(model => model.creationDate) </small></h1>
+            <h1> @Html.DisplayFor(model => model.entryTitle) Pain Diary Details<small class="text-muted">&emsp;Date created:   @Html.DisplayFor(model => model.painTime) </small></h1>
         </div>
         <div class="col-md-2">
             <a href="#"><span class="btn btn-outline-info"><span class="flaticon-edit-1"></span>&emsp;Edit</span></a>
@@ -44,12 +44,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>@Html.DisplayFor(model => model.painArea)</td>
+                            <td>@*@Html.DisplayFor(model => model.painArea)*@</td>
                             <td class="text-warning">6/10</td>
                             <td>03:40 PM</td>
                         </tr>
                         <tr>
-                            <td>@Html.DisplayFor(model => model.painArea)</td>
+                            <td>@*@Html.DisplayFor(model => model.painArea)*@</td>
                             <td class="text-info">4/10</td>
                             <td>11:05 AM</td>
                         </tr>
