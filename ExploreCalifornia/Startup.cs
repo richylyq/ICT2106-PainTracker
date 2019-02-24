@@ -36,7 +36,7 @@ namespace ExploreCalifornia
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<ExploreCaliforniaContext>(options =>
+            services.AddDbContext<DiaryContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ExploreCaliforniaContext")));
         }
 

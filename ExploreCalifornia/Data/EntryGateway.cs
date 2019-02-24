@@ -8,7 +8,7 @@ namespace ExploreCalifornia.Data
 {
     public class EntryGateway : DataGateway<Entry>
     {
-        public EntryGateway(ExploreCaliforniaContext context) : base(context)
+        public EntryGateway(DiaryContext context) : base(context)
         {
 
         }

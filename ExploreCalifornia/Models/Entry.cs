@@ -8,11 +8,9 @@ namespace ExploreCalifornia.Models
 {
     public class Entry
     {
-        public int entryID { get; set; }
+        public int EntryID { get; set; }
 
-        public int diaryID { get; set; }
-
-        public String entryTitle { get; set; }
+        public String EntryTitle { get; set; }
 
         public String entryDescription { get; set; }
 
@@ -20,11 +18,14 @@ namespace ExploreCalifornia.Models
 
         //public List<PainIntensity> painIntensity { get; set; }
 
-        [DataType(DataType.Time)]
+        /*[DataType(DataType.Time)]
         public DateTime painTime { get; set; }
+        */
 
-        
-        
+        public virtual ICollection<Area> Areas { get; set; }
+
+
+
         //[DataType(DataType.Date)]
         //public DateTime creationDate { get; set; }
 

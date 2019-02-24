@@ -9,11 +9,11 @@ namespace ExploreCalifornia.Data
 {
     public class DataGateway<T> : IDataGateway<T> where T : class
     {
-        internal ExploreCaliforniaContext db;
+        internal DiaryContext db;
         internal DbSet<T> data = null;
 
 
-        public DataGateway(ExploreCaliforniaContext context)
+        public DataGateway(DiaryContext context)
         {
             db = context;
             data = db.Set<T>();
@@ -46,7 +46,9 @@ namespace ExploreCalifornia.Data
         public T SelectById(int? id)
         {
             return data.Find(id);
+            
         }
+
 
         public void Update(T obj)
         {

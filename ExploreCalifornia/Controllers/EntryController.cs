@@ -13,10 +13,13 @@ namespace ExploreCalifornia.Controllers
     {
 
         internal DataGateway<Entry> dataGateway;
+        internal AreaGateway areaGateway;
 
-        public EntryController(ExploreCaliforniaContext context)
+        public EntryController(DiaryContext context)
         {
             dataGateway = new EntryGateway(context);
+            areaGateway = new AreaGateway(context);
+
         }
         // GET: Entry
         public ActionResult Index()
@@ -25,7 +28,7 @@ namespace ExploreCalifornia.Controllers
         }
 
         // GET: Entry/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
 
             if (id == null)
@@ -34,6 +37,18 @@ namespace ExploreCalifornia.Controllers
             }
 
             Entry entry = dataGateway.SelectById(id);
+            //do something here
+            string name = areaGateway.SelectByEntryId(id).Test;
+            if (name != null)
+            {
+                ViewBag.id = name;
+            }
+            else
+            {
+                ViewBag.id = "oops";
+            }
+            
+            //ViewBag.id = entry.Areas.First().Test;
             if (entry == null)
             {
                 return NotFound();
@@ -56,7 +71,7 @@ namespace ExploreCalifornia.Controllers
             {
                 // TODO: Add insert logic here
                 dataGateway.Insert(entry);
-                return RedirectToAction(nameof(Details), new { id = entry.entryID });
+                return RedirectToAction(nameof(Details), new { id = entry.EntryID });
             }
             catch
             {
@@ -101,7 +116,7 @@ namespace ExploreCalifornia.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                dataGateway.Delete(id);
                 return RedirectToAction(nameof(Index));
             }
             catch

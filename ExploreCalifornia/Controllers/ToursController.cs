@@ -159,7 +159,7 @@ namespace ExploreCalifornia.Controllers
 
     public class TourGateway : ITourGateway
     {
-        internal ExploreCaliforniaContext db = new ExploreCaliforniaContext();
+        internal DiaryContext db = new DiaryContext();
 
         public IEnumerable<Tour> SelectAll()
         {

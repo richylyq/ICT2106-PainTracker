@@ -7,67 +7,56 @@
 <style>
     #PDwrapper {
         padding: 25px;
-        margin:70px;
-        width:75%;
-        height:auto;
-        
+        margin: 70px;
+        width: 75%;
+        height: auto;
     }
 
     .flaticon-upload, .flaticon-upload:hover {
-        
         text-decoration: none;
         font-size: 50px;
         margin-left: 70%;
     }
 
     .table {
-        
-        background-color:aquamarine;
+        background-color: aquamarine;
     }
-
 </style>
 
-<div id="PDwrapper">
-    <h1>Pain Diary</h1>
 
-    <p>
-        <a asp-action="Create" class="flaticon-upload"></a>
-    </p>
-    <table class="table">
-        <thead>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.entryDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Creation Date
-                </th>
-                
-                <th>
-                    Actions
-                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.entryDescription)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EntryID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EntryID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EntryID">Delete</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.entryTitle)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.painTime.Date)
-                    </td>
-                    
-                    <td>
-
-                        @Html.ActionLink("View", "View", new { id = item.entryID }) |
-                        @Html.ActionLink("Edit", "Edit", new { id = item.entryID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.entryID })
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-</div>
+        }
+    </tbody>
+</table>

@@ -4,24 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
+using ExploreCalifornia.Models;
 
 namespace ExploreCalifornia.Models
 {
-    public class ExploreCaliforniaContext : DbContext
+    public class DiaryContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ExploreCaliforniaContext-07d0d4d2-781a-4261-bdda-4e2e0a8da355;Trusted_Connection=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DiaryContext;Trusted_Connection=True;MultipleActiveResultSets=true");
             }
         }
 
-        public ExploreCaliforniaContext()
+        public DiaryContext()
         {
         }
 
-        public ExploreCaliforniaContext (DbContextOptions<ExploreCaliforniaContext> options)
+        public DiaryContext (DbContextOptions<DiaryContext> options)
             : base(options)
         {
         }
@@ -29,5 +30,6 @@ namespace ExploreCalifornia.Models
 
         public DbSet<Tour> Tour { get; set; }
         public new DbSet<Entry> Entry { get; set; }
+        public DbSet<ExploreCalifornia.Models.Area> Area { get; set; }
     }
 }
