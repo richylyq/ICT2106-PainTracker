@@ -38,7 +38,11 @@ namespace ExploreCalifornia.Controllers
 
             Entry entry = dataGateway.SelectById(id);
             //do something here
-            string name = areaGateway.SelectByEntryId(id).Test;
+            string name = "";
+            foreach (var item in areaGateway.SelectByEntryId(id))
+            {
+                name += item.Test;
+            }
             if (name != null)
             {
                 ViewBag.id = name;

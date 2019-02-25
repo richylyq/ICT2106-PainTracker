@@ -13,9 +13,10 @@ namespace ExploreCalifornia.Data
 
         }
 
-        public Area SelectByEntryId(int? id)
+        public IEnumerable<Area> SelectByEntryId(int? id)
         {
-            return data.SingleOrDefault(area => area.EntryID == id);
+            return data.Where(area => area.EntryID == id).ToList();
+            //return data.SingleOrDefault(area => area.EntryID == id);
             //return data.First();            
         }
     }
