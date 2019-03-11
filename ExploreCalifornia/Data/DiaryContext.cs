@@ -27,9 +27,7 @@ namespace ExploreCalifornia.Models
         {
         }
 
-
-        public DbSet<Tour> Tour { get; set; }
         public new DbSet<Entry> Entry { get; set; }
-        public DbSet<ExploreCalifornia.Models.Area> Area { get; set; }
+        public DbSet<ExploreCalifornia.Models.PainDetails> Area { get; set; }
     }
 }

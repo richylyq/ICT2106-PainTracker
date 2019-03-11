@@ -22,7 +22,7 @@ namespace ExploreCalifornia.Models
         public DateTime painTime { get; set; }
         */
 
-        public virtual ICollection<Area> Areas { get; set; }
+        public virtual ICollection<PainDetails> Areas { get; set; }
 
 
 

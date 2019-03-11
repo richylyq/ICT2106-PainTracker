@@ -9,11 +9,11 @@ using ExploreCalifornia.Models;
 
 namespace ExploreCalifornia.Controllers
 {
-    public class AreasController : Controller
+    public class PainDetailsController : Controller
     {
         private readonly DiaryContext _context;
 
-        public AreasController(DiaryContext context)
+        public PainDetailsController(DiaryContext context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace ExploreCalifornia.Controllers
 
             var area = await _context.Area
                 .Include(a => a.Entry)
-                .FirstOrDefaultAsync(m => m.AreaID == id);
+                .FirstOrDefaultAsync(m => m.PainDetailsID == id);
             if (area == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace ExploreCalifornia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AreaID,EntryID,Test")] Area area)
+        public async Task<IActionResult> Create([Bind("AreaID,EntryID,Test")] PainDetails area)
         {
             if (ModelState.IsValid)
             {
@@ -90,9 +90,9 @@ namespace ExploreCalifornia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AreaID,EntryID,Test")] Area area)
+        public async Task<IActionResult> Edit(int id, [Bind("AreaID,EntryID,Test")] PainDetails area)
         {
-            if (id != area.AreaID)
+            if (id != area.PainDetailsID)
             {
                 return NotFound();
             }
@@ -106,7 +106,7 @@ namespace ExploreCalifornia.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AreaExists(area.AreaID))
+                    if (!AreaExists(area.PainDetailsID))
                     {
                         return NotFound();
                     }
@@ -131,7 +131,7 @@ namespace ExploreCalifornia.Controllers
 
             var area = await _context.Area
                 .Include(a => a.Entry)
-                .FirstOrDefaultAsync(m => m.AreaID == id);
+                .FirstOrDefaultAsync(m => m.PainDetailsID == id);
             if (area == null)
             {
                 return NotFound();
@@ -153,7 +153,7 @@ namespace ExploreCalifornia.Controllers
 
         private bool AreaExists(int id)
         {
-            return _context.Area.Any(e => e.AreaID == id);
+            return _context.Area.Any(e => e.PainDetailsID == id);
         }
     }
 }

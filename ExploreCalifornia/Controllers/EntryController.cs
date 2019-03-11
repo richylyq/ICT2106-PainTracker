@@ -41,7 +41,7 @@ namespace ExploreCalifornia.Controllers
             string name = "";
             foreach (var item in areaGateway.SelectByEntryId(id))
             {
-                name += item.Test;
+                name += item.Test + "\n\n";
             }
             if (name != null)
             {
